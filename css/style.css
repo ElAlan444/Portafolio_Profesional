@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "GeistMono";
+    src: url("../Fonts/GeistMono-VariableFont_wght.ttf");
+}
+
+body {
+    background-color: #08030e;
+    font-family: "GeistMono";
+    font-size: 27px;
+    background: linear-gradient(to bottom right, blue, pink);
+    color: rgb(36, 36, 36);
+}
+
+header {
+    background-color: purple;
+    width: 100%;
+}
+
+.animacion_scroll {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-300px);
+}
+
+#TituloHeader {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    float: left;
+    width: 100%;
+    /* background-color: #08030e; */
+    padding-top: 50px;
+}
+
+#subtituloHeader {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    float: left;
+    width: 100%;
+    /* background-color: #08030e; */
+    padding-bottom: 10px;
+}
+
+#contactos {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    float: left;
+    width: 100%;
+    /* background-color: #08030e; */
+    padding-bottom: 50px;
+}
+
+#contactos h2 {
+    padding-bottom: 3.5px;
+}
+
+.Contenedorhr {
+    display: flex;
+    float: left;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    width: 500px;
+    height: 2px;
+    background-color: white;
+}
+
+.insta {
+    width: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+
+.insta:hover {
+    transform: scale(1.1);
+}
+
+.correo {
+    width: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.correo:hover {
+    transform: scale(1.1);
+}
+
+.whats {
+    width: 50px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.whats:hover {
+    transform: scale(1.1);
+}
+
+#contactos a {
+    text-decoration: none;
+}
+
+
+.ContenedorContenidoCentrado {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    float: left;
+    /* text-align: center; */
+    /* background-color: #08030e; */
+    margin-bottom: 100px;
+
+}
+
+#contenedor1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    float: left;
+    /* text-align: center; */
+    /* background-color: #08030e; */
+    margin-bottom: 100px;
+}
+
+.contenidoCentrado {
+    width: 1280px;
+    background-color: white;
+    float: left;
+    /* text-align: center; */
+    border-radius: 25px;
+}
+
+#contenedorCentrado1 {
+    width: 1280px;
+    /* background-color: white; */
+    float: left;
+    /* text-align: center; */
+    border-radius: 25px;
+}
+
+#quienSoy {
+    width: 100%;
+    float: left;
+    color: rgb(36, 36, 36);
+
+    /* background-color: white; */
+}
+
+#imagenPerfil {
+    float: left;
+    width: 250px;
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 25px;
+}
+
+#contenedorDescripcion {
+    display: flex;
+    float: left;
+    height: 436px;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 300px);
+
+    /* background-color: white; */
+
+}
+
+.descripcion {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 20px;
+    color: rgb(79, 65, 85);
+}
+
+#SobreMi {
+    width: 100%;
+    text-align: left;
+    color: rgb(36, 36, 36);
+}
+
+#Competencias {
+    width: 100%;
+    text-align: left;
+    color: rgb(36, 36, 36);
+}
+
+#TextoTrabajos {
+    width: 100%;
+    text-align: left;
+    color: rgb(36, 36, 36);
+}
+
+.bloqueizq {
+    float: left;
+    width: 50%;
+    /* background-color: yellowgreen; */
+}
+
+.bloqueder {
+    float: left;
+    width: 50%;
+    /* background-color: rgb(205, 50, 50); */
+}
+
+.LugaresExp {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#Competencias {
+
+    margin-top: 25px;
+    width: 100%;
+    text-align: left;
+}
+
+#habilidades {
+    width: 100%;
+    text-align: left;
+}
+
+li {
+    margin-bottom: 30px;
+}
+
+#TextoTrabajos {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#TextoKeyInnovations {
+    float: left;
+    width: 100%;
+    /* background-color: green; */
+    margin-left: 50px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+/* Esto es para el carrucel */
+/* Estilo básico para el Slider*/
+#gallery {
+
+    width: 30%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.gallery-container {
+    margin-top: 50px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+}
+
+/* Navegación del Slider */
+.gallery-navigation {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -50px;
+}
+
+.nav-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: #005f5f;
+}
+
+/* Aqui termina lo del carrucel */
+#TextoTrabajos {
+    text-align: center;
+}
+
+#videosKey1 {
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    /* background-color: blue; */
+}
+
+#videosKey2 {
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    /* background-color: red; */
+}
+
+.video1 {
+    height: 800px;
+    float: left;
+}
+
+.video2 {
+    width: 800px;
+
+    float: left;
+}
+
+#videosEdicion1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#videosEdicion2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.video3 {
+    height: 800px;
+
+    float: left;
+}
+
+.video4 {
+    height: 800px;
+
+    float: left;
+}
+
+#TextoVideojuego {
+    padding-left: 50px;
+}
+
+#videoInsania {
+
+    width: 560px;
+    height: 315px;
+}
+
+.contenedorYoutube {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+footer{
+    float: left;
+    width: 100%;
+    height: 300px;
+}
