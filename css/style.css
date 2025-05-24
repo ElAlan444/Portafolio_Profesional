@@ -198,6 +198,7 @@ hr {
     color: rgb(36, 36, 36);
 }
 
+
 .bloqueizq {
     float: left;
     width: 50%;
@@ -354,6 +355,12 @@ li {
 #TextoVideojuego {
     padding-left: 50px;
 }
+#TextoICB{
+    padding-left: 60px;
+}
+#TextoJuegoEducacional{
+    padding-left: 60px;   
+}
 
 #videoInsania {
 
@@ -367,7 +374,49 @@ li {
     margin-bottom: 25px;
 }
 footer{
-    float: left;
+    margin-top: 50px;
+    float: left; 
     width: 100%;
     height: 300px;
+}
+/* aqui hay weas de la segunda galeria */
+.galeria {
+	width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 20px;
+	box-sizing: border-box;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.galeria li {
+	margin: 5px;
+}
+
+.galeria img {
+	width: 270px;
+	height: 480px;
+}
+.galeria2{
+    width: 90%;
+	margin: auto;
+	list-style: none;
+	padding: 20px;
+	box-sizing: border-box;
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+}
+.galeria2 li {
+	margin: 5px;
+}
+
+.galeria2 img {
+	width: 480px;
+	height: 270px;
 }
