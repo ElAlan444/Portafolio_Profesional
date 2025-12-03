@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    /* CLAVE RESPONSIVE: Incluye padding y borde dentro del ancho total del elemento */
+    box-sizing: border-box; 
 }
 
 @font-face {
@@ -11,95 +13,62 @@
 body {
     background-color: #08030e;
     font-family: "GeistMono";
-    font-size: 27px;
+    /* CLAVE RESPONSIVE: Usar unidades relativas (em/rem) o dejarla por defecto para que sea legible */
+    font-size: 27px; 
     background: linear-gradient(to bottom right, blue, pink);
     color: rgb(36, 36, 36);
 }
 
-header {
-    background-color: purple;
-    width: 100%;
-}
-
+/* --- ANIMACIONES (Mantenidas y Preparadas) --- */
+/* Esta clase debe permanecer así, ya que el JS la anulará con estilos en línea. */
 .animacion_scroll {
     opacity: 0;
     transition: all 0.5s ease-in-out;
     transform: translateX(-300px);
 }
 
-#TituloHeader {
+/* --- HEADERS Y CONTACTOS --- */
+
+#TituloHeader, #subtituloHeader, #contactos {
     color: rgb(255, 255, 255);
     text-align: center;
-    float: left;
     width: 100%;
-    /* background-color: #08030e; */
+    /* float: left; se mantiene pero es redundante con width: 100% */
+}
+
+#TituloHeader {
     padding-top: 50px;
 }
-
 #subtituloHeader {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    float: left;
-    width: 100%;
-    /* background-color: #08030e; */
     padding-bottom: 10px;
 }
-
 #contactos {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    float: left;
-    width: 100%;
-    /* background-color: #08030e; */
     padding-bottom: 50px;
-}
-
-#contactos h2 {
-    padding-bottom: 3.5px;
 }
 
 .Contenedorhr {
     display: flex;
-    float: left;
-    width: 100%;
     justify-content: center;
+    width: 100%;
     margin-bottom: 20px;
 }
 
 hr {
-    width: 500px;
+    /* CLAVE RESPONSIVE: Usar max-width para limitar en escritorio y % en móvil */
+    width: 90%; 
+    max-width: 500px; 
     height: 2px;
     background-color: white;
 }
 
-.insta {
+/* Iconos (tamaño fijo aceptable, pero los márgenes deben ser flexibles) */
+.insta, .correo, .whats {
     width: 50px;
-    margin-left: 40px;
-    margin-right: 40px;
-
+    margin: 0 40px;
+    transition: transform 0.3s;
 }
 
-.insta:hover {
-    transform: scale(1.1);
-}
-
-.correo {
-    width: 50px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-.correo:hover {
-    transform: scale(1.1);
-}
-
-.whats {
-    width: 50px;
-    margin-right: 40px;
-    margin-left: 40px;
-}
-
-.whats:hover {
+.insta:hover, .correo:hover, .whats:hover {
     transform: scale(1.1);
 }
 
@@ -108,168 +77,109 @@ hr {
 }
 
 
-.ContenedorContenidoCentrado {
+/* --- CONTENEDORES PRINCIPALES --- */
+
+.ContenedorContenidoCentrado, #contenedor1 {
     display: flex;
     justify-content: center;
     width: 100%;
-    float: left;
-    /* text-align: center; */
-    /* background-color: #08030e; */
-    margin-bottom: 100px;
-
-}
-
-#contenedor1 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    float: left;
-    /* text-align: center; */
-    /* background-color: #08030e; */
     margin-bottom: 100px;
 }
 
-.contenidoCentrado {
-    width: 1280px;
+.contenidoCentrado, #contenedorCentrado1 {
+    /* CLAVE RESPONSIVE: Ancho fluido hasta un límite máximo */
+    width: 95%; 
+    max-width: 1280px;
     background-color: white;
-    float: left;
-    /* text-align: center; */
     border-radius: 25px;
+    /* Añadir un padding para evitar que el contenido toque el borde */
+    padding: 20px; 
 }
 
-#contenedorCentrado1 {
-    width: 1280px;
-    /* background-color: white; */
-    float: left;
-    /* text-align: center; */
-    border-radius: 25px;
-}
+/* --- SECCIÓN QUIÉN SOY (Imagen y Texto) --- */
 
 #quienSoy {
-    width: 100%;
-    float: left;
-    color: rgb(36, 36, 36);
-
-    /* background-color: white; */
+    /* CLAVE RESPONSIVE: Usar Flexbox para layout moderno (sustituye a los floats) */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    gap: 20px;
+    padding: 20px 0; /* padding interno */
 }
 
 #imagenPerfil {
-    float: left;
+    /* Mantenemos el tamaño, pero centramos y quitamos el margen fijo */
     width: 250px;
-    margin-left: 50px;
-    margin-top: 40px;
+    margin: 0;
     border-radius: 25px;
 }
 
 #contenedorDescripcion {
+    /* CLAVE RESPONSIVE: Ocupa el espacio restante (flex-grow) */
     display: flex;
-    float: left;
-    height: 436px;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    width: calc(100% - 300px);
-
-    /* background-color: white; */
-
+    flex-grow: 1; /* Crece para ocupar el espacio a la derecha de la imagen */
+    height: auto; /* Altura automática */
+    width: auto; /* Ancho automático para flexbox */
 }
 
 .descripcion {
-    padding-left: 100px;
-    padding-right: 100px;
+    /* CLAVE RESPONSIVE: Usar padding relativo */
+    padding: 0 50px; 
     margin-bottom: 20px;
     color: rgb(79, 65, 85);
 }
 
+#SobreMi, #Competencias, #TextoTrabajos {
+    width: 100%;
+    text-align: left;
+    color: rgb(36, 36, 36);
+}
 #SobreMi {
-    width: 100%;
-    text-align: left;
-    color: rgb(36, 36, 36);
-}
-
-#Competencias {
-    width: 100%;
-    text-align: left;
-    color: rgb(36, 36, 36);
-}
-
-#TextoTrabajos {
-    width: 100%;
-    text-align: left;
-    color: rgb(36, 36, 36);
-}
-
-
-.bloqueizq {
-    float: left;
-    width: 50%;
-    /* background-color: yellowgreen; */
-}
-
-.bloqueder {
-    float: left;
-    width: 50%;
-    /* background-color: rgb(205, 50, 50); */
-}
-
-.LugaresExp {
-    float: left;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-#Competencias {
-
-    margin-top: 25px;
-    width: 100%;
-    text-align: left;
-}
-
-#habilidades {
-    width: 100%;
-    text-align: left;
-}
-
-li {
-    margin-bottom: 30px;
-}
-
-#TextoTrabajos {
     margin-top: 10px;
-    margin-left: 50px;
 }
+#Competencias {
+    margin-top: 25px;
+}
+#TextoTrabajos {
+    margin-left: 30px;
+}
+
+/* --- SECCIÓN COMPETENCIAS (Bloques Izquierda/Derecha) --- */
+
+#habilidades .descripcion {
+    /* CLAVE RESPONSIVE: Aplicamos Flexbox para las dos columnas */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 50px; /* Padding interno */
+}
+
+.bloqueizq, .bloqueder {
+    width: 50%;
+    /* float: left; eliminado por Flexbox */
+}
+
+.LugaresExp, li {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* --- CARRUSEL Y TRABAJOS --- */
 
 #TextoKeyInnovations {
-    float: left;
     width: 100%;
-    /* background-color: green; */
-    margin-left: 50px;
+    margin-left: 30px;
     text-align: left;
     margin-bottom: 25px;
 }
 
-/* Esto es para el carrucel */
-/* Estilo básico para el Slider*/
 #gallery {
-
-    width: 30%;
-    margin: auto;
+    /* CLAVE RESPONSIVE: Ancho fluido y centrado */
+    width: 90%; 
+    max-width: 800px; 
+    margin: 50px auto; /* Centrado y margen */
     overflow: hidden;
-}
-
-.gallery-container {
-    margin-top: 50px;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.gallery-item {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.gallery-item img {
-    width: 100%;
-    display: block;
+    /* Asegúrate de que no haya `float` aquí */
 }
 
 /* Navegación del Slider */
@@ -281,142 +191,166 @@ li {
     top: -50px;
 }
 
-.nav-button {
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+/* --- VIDEOS --- */
 
-.nav-button:hover {
-    background-color: #005f5f;
-}
-
-/* Aqui termina lo del carrucel */
-#TextoTrabajos {
-    text-align: center;
-}
-
-#videosKey1 {
-    float: left;
-    width: 100%;
+#videosKey1, #videosKey2, #videosEdicion1, #videosEdicion2, .contenedorYoutube {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
-    /* background-color: blue; */
-}
-
-#videosKey2 {
-    float: left;
     width: 100%;
-    display: flex;
-    justify-content: center;
     margin-bottom: 50px;
-    /* background-color: red; */
 }
 
-.video1 {
-    height: 800px;
-    float: left;
+.video1, .video3, .video4 {
+    /* CLAVE RESPONSIVE: Ancho fluido y altura limitada */
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    max-height: 800px; 
 }
 
 .video2 {
-    width: 800px;
-
-    float: left;
+    /* CLAVE RESPONSIVE: Ancho fluido para video horizontal */
+    width: 90%;
+    max-width: 800px; 
+    height: auto;
 }
 
-#videosEdicion1 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-#videosEdicion2 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-.video3 {
-    height: 800px;
-
-    float: left;
-}
-
-.video4 {
-    height: 800px;
-
-    float: left;
-}
-
-#TextoVideojuego {
-    padding-left: 50px;
-}
-#TextoICB{
-    padding-left: 60px;
-}
-#TextoJuegoEducacional{
-    padding-left: 60px;   
-}
-
-#videoInsania {
-
-    width: 560px;
-    height: 315px;
-}
-
+/* Contenedor de YouTube para mantener la proporción 16:9 */
 .contenedorYoutube {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    margin: 25px auto;
 }
-footer{
-    margin-top: 50px;
-    float: left; 
+#videoInsania {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 300px;
-}
-/* aqui hay weas de la segunda galeria */
-.galeria {
-	width: 90%;
-	margin: auto;
-	list-style: none;
-	padding: 20px;
-	box-sizing: border-box;
-	
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+    height: 100%;
 }
 
-.galeria li {
-	margin: 5px;
+/* --- GALERÍAS (ICB y Educacional) --- */
+.galeria, .galeria2 {
+    width: 95%;
+    margin: auto;
+    list-style: none;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .galeria img {
-	width: 270px;
-	height: 480px;
+    /* CLAVE RESPONSIVE: Tamaño adaptable */
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    max-height: 480px;
+    margin: 5px;
 }
-.galeria2{
-    width: 90%;
-	margin: auto;
-	list-style: none;
-	padding: 20px;
-	box-sizing: border-box;
-	
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-
-}
-.galeria2 li {
-	margin: 5px;
-}
-
 .galeria2 img {
-	width: 480px;
-	height: 270px;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    max-height: 270px;
+    margin: 5px;
+}
+
+footer{
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+}
+
+/* ------------------------------------------- */
+/* 📱 MEDIA QUERY PARA MÓVILES (Max-width 768px) */
+/* ------------------------------------------- */
+
+@media (max-width: 768px) {
+    
+    body {
+        font-size: 18px; /* Reducción de fuente para mejor legibilidad en móvil */
+    }
+
+    /* Reducir márgenes de iconos */
+    .insta, .correo, .whats {
+        margin: 0 15px; 
+    }
+    
+    .contenidoCentrado, #contenedorCentrado1 {
+        padding: 10px;
+    }
+    
+    /* SECCIÓN QUIÉN SOY: Imagen y descripción se apilan */
+    #quienSoy {
+        display: block;
+        text-align: center;
+    }
+    #imagenPerfil {
+        width: 80%; /* Imagen más grande en móvil */
+        max-width: 300px;
+        margin: 20px auto;
+    }
+    #contenedorDescripcion {
+        width: 100%;
+    }
+    .descripcion {
+        padding: 0 15px; /* Menos padding lateral */
+    }
+    
+    /* SECCIÓN COMPETENCIAS: Columnas se apilan */
+    #habilidades .descripcion {
+        display: block;
+        padding: 0 15px;
+    }
+    .bloqueizq, .bloqueder {
+        width: 100%; /* Ocupa todo el ancho */
+        margin-bottom: 20px;
+    }
+    
+    /* Títulos centrados en móvil */
+    #SobreMi, #Competencias, #TextoTrabajos, #TextoKeyInnovations, #TextoVideojuego, #TextoICB, #TextoJuegoEducacional {
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    /* Videos más pequeños en móvil */
+    .video1, .video3, .video4, .video2 {
+        max-height: 500px;
+    }
+
+    /* Galería de ICB/Educacional: Imágenes ocupan más ancho o se apilan mejor */
+    .galeria img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    .galeria2 img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+    
+}
+/* --- CÓDIGO FALTANTE DEL CARRUSEL --- */
+
+/* Contenedor que mueve las imágenes */
+.gallery-container {
+    display: flex; /* Esto pone las imágenes en fila */
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Cada "diapositiva" individual */
+.gallery-item {
+    min-width: 100%; /* Obliga a que cada imagen ocupe todo el ancho del visor */
+    box-sizing: border-box;
+}
+
+/* La imagen dentro de la diapositiva */
+.gallery-item img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: auto;
+    display: block;
 }
